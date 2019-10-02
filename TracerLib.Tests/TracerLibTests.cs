@@ -66,23 +66,7 @@ namespace TracerLib.Tests
             Assert.AreEqual(MethodsCount, traceResult.ThreadsInfo[0].Methods.Count);
         }
 
-        [TestMethod]
-        public void ThreadsInMethod()
-        {
-            //creates {ThreadsCount} threads
-            for (int i = 0; i < ThreadsCount; i++)
-            {
-                _threads.Add(new Thread(Method));
-            }
-            foreach (Thread thread in _threads)
-            {
-                thread.Start();
-                thread.Join();
-            }
-            TraceResult traceResult = Tracer.GetTraceResult();
-            Assert.AreEqual(ThreadsCount, traceResult.ThreadsInfo.Count);
-        }
-
+        
         [TestMethod]
         public void Name()
         {

@@ -22,7 +22,10 @@ namespace Tracer
             {
                 if (Methods.Count > 0)
                 {
-                    _executionTime = Methods[0].ExecutionTime;      /////////////////////
+                    foreach (var method in Methods)
+                    {
+                        _executionTime += method.ExecutionTime;
+                    }
                 }
                 return _executionTime;
             }

@@ -32,6 +32,7 @@ namespace ConsoleApp
             public void MyMethod2()
             {
                 _tracer.StartTrace();
+                Thread.Sleep(100);
                 _tracer.StopTrace();
             }
         }
